@@ -1,0 +1,181 @@
+
+\section{Lógica}
+
+\subsection{Elementos preliminares}
+
+La lógica le proporciona a las matemáticas un lenguaje claro y un método preciso para demostrar nuevas afirmaciones a partir de otras ya establecidas o dadas. A las afirmaciones previamente aceptadas las denominamos \textbf{Axiomas}. A aquellas que se construyen mediante la lógica las denominamos \textbf{Teoremas}. 
+
+Referencia: Apunte Introducción al Álgebra, semanas 1 y 2. 
+
+\begin{definicion}
+	Una \textbf{proposición lógica} es una afirmación que siempre toma uno de los dos valores de verdad posibles: verdadero (V) o falso (F). 
+\end{definicion}
+
+\begin{ejemplo}
+	Son proposiciones lógicas: 
+	\begin{itemize}
+		\item $2+1 = 5$. 
+		\item $1 \geq 0$.
+		\item Hoy está lloviendo. 
+		\item Todo juego en forma normal admite al menos un Equilibrio de Nash.   
+		\item Un monopolio perfectamente discriminador extrae todo el excedente del consumidor. 
+	\end{itemize}
+\end{ejemplo}
+
+Los conectivos lógicos permiten crear nuevas proposiciones a partir de otras ya conocidas. El valor de verdad de la nueva proposición dependerá de los valores de verdad de sus componentes. 
+
+\begin{definicion}
+	\textbf{(Negación)} 
+	Sea $p$ una proposición lógica. La proposición $\overline{p}$ (también denotada $\sim p$) se lee ``no $p$'' y es aquella cuyo valor de verdad siempre es distinto al de $p$. 
+\end{definicion}
+
+\begin{definicion}
+	\textbf{(O lógico)}	
+	Sean $p$ y $q$ proposiciones lógicas. La proposición $p \vee q$ se lee ``$p$ o $q$'' y es verdadera cuando al menos una de las proposiciones $p$ o $q$ es verdadera. 
+\end{definicion}
+
+\begin{definicion}
+	\textbf{(Y lógico)} 
+	Sean $p$ y $q$ proposiciones lógicas. La proposición $p \wedge q$ se lee ``$p$ y $q$'' y es verdadera cuando tanto $p$ y $q$ son verdaderas. 
+\end{definicion}
+
+\begin{definicion}
+	\textbf{(Implicancia)}
+	Sean $p$ y $q$ proposiciones lógicas. La proposición $p \Rightarrow q$ se lee ``$p$ implica $q$'' o ``si $p$, entonces $q$''. Es falsa solo cuando $p$ es verdadera y $q$ es falsa. En cualquier otro caso, es verdadera. 
+	
+	A $p$ se le llama la \textbf{hipótesis} y a $q$ la \textbf{conclusión} de la proposición $p\Rightarrow q$. 
+\end{definicion}
+
+\begin{definicion}
+	\textbf{(Equivalencia)}
+	Sean $p$ y $q$ proposiciones lógicas. La proposición $p\Leftrightarrow q$ se lee ``$p$ es equivalente a $q$'' o ``$p$ si y solo si $q$''. Es verdadera cuando $p$ y $q$ tienen el mismo valor de verdad y falsa cuando estos valores difieren. 
+\end{definicion}
+
+\begin{ejemplo}
+	Algunos ejemplos de las definiciones anteriores son: 
+	\begin{itemize}
+		\item La negación de la proposición ``estoy poniendo atención'' es ``no estoy poniendo atención''. 
+		\item La proposición lógica ``mañana lloverá o mañana no lloverá'' es verdadera.  
+		\item La proposición lógica ``mañana lloverá y mañana no lloverá'' es falsa. 
+		\item La proposición lógica ``si estoy en Santiago, entonces estoy en Chile'' es verdadera.
+		\item Si $a$ y $b$ son números reales, la proposición $a \geq b \Longleftrightarrow 2a \geq 2b$ es verdadera. 
+	\end{itemize}
+\end{ejemplo}
+
+\begin{definicion}
+	Una \textbf{tautología} es una proposición que, sin importar el valor de verdad de las proposiciones que la constituyen, es siempre verdadera. 
+	
+	Un argumento que permite saber que una proposición es una tautología se llama una \textbf{demostración}. 
+\end{definicion}
+
+\begin{proposicion}
+	Son tautologías: 
+	\begin{itemize}
+		\item $p \o V \iff V , \quad p \y F \iff F$. 
+		\item $p \y  V \iff p, \quad p \vee F \iff p$. 
+		\item $p \y p \iff p, \quad p \o p \iff p$. 
+		\item $\sim (\sim p) \iff p$. 
+		\item $p \o \sim p \iff V$. 
+		\item $p \y \sim p \iff F$. 
+		\item $(p \Rightarrow q) \iff \sim p \o q$. 
+	\end{itemize}
+\end{proposicion}
+
+\begin{proposicion}
+	Las siguientes son tautologías: 
+	\begin{itemize}
+		\item Leyes de Morgan: $$\overline{p\y q} \iff \overline{p}\o \overline{q}, \quad \overline{p\o q} \iff \overline{p}\y \overline{q}$$
+		\item Conmutatividad: $$p \o q \iff q \o p , \quad p \y q \iff q \y p$$
+		\item Transitividad: $$[(p \Rightarrow q) \y (q \Rightarrow r
+		)] \Rightarrow (p \Rightarrow r )$$
+		$$[(p \iff q) \y (q \iff r)] \Rightarrow (p \iff r )$$
+		\item Equivalencia dividida: $$ ( p \iff q) \iff ( p \Rightarrow q ) \y ( q \Rightarrow p)$$ 
+		\item Demostración por casos: 
+		$$ (p \o q \Rightarrow r) \iff ( p \Rightarrow r) \y ( q \Rightarrow r) $$ 
+		\item Demostración por contradicción: 
+		$$ (p \Rightarrow q ) \iff ( p \y \sim q \Rightarrow F ) $$
+		\item Contrarrecíproca: 
+		$$ (p \Rightarrow q) \iff ( \sim q \Rightarrow \sim p ) $$ 
+	\end{itemize}
+\end{proposicion}
+
+\begin{ejemplo}
+	Sabemos que $a$ es un número racional si puede escribirse como $a = m/n$ con $m$ y $n$ números enteros y $n \neq 0$. 
+	
+	Veamos que: 
+	$$ 3a \text{ no es racional} \Rightarrow a \text{ no es racional} $$
+	Por contrarrecíproca, sabemos que lo anterior es equivalente a probar que: 
+	$$ a \text{ es racional } \Rightarrow 3a \text{ es racional } $$ 
+	Veamos que esto último es cierto: 
+	\begin{itemize}
+		\item Supongamos que $a$ es racional (recordar que $p \Rightarrow q$ es falso solo cuando $p$ es verdadero y $q$ es falso).
+		\item Luego, $a = m/n$ con $m$ y $n$ enteros con $n\neq 0$.
+		\item Por lo tanto, $3 a = 3m /n$.
+		\item Y como $3a = m'/n$ con $m'$ y $n$ enteros con $n \neq 0$, se concluye que $3a$ es un número racional. $\qed$ 
+	\end{itemize}
+\end{ejemplo}
+
+\begin{ejemplo}
+	Mostraremos que si el producto de dos números $a$ y $b$ es $1/3$, entonces ambos son racionales o ninguno lo es. 
+	
+	Razonando por contradicción, supongamos que: 
+	$$ a \cdot b = 1 /3 $$ 
+	Y que $a$ es racional, pero $b$ no lo es (notar que esto es \textbf{sin pérdida de generalidad}).
+	
+	Como $a$ es racional, entonces existen $m$, $n$ números enteros con $n \neq 0$ tales que: 
+	$$ a = m / n $$ 
+	
+	Entonces: 
+	$$ \frac{m}{n} \cdot b = \frac{1}{3} \quad \Rightarrow \quad b = \frac{n}{3m} $$ 
+	Pero esto significa que $b$ es un número racional ($n$, $3m$ enteros con $3m\neq 0$), lo que es una contradicción y con lo que se concluye lo pedido. $\qed$ 
+	
+	¿Porqué $3 m \neq 0$? 
+\end{ejemplo}
+
+\subsection{Cuantificadores proposicionales}
+
+La lógica proposicional que hemos visto nos permite hacer deducciones y construir propiedades. Más aún, nos permite deducir que si $p_1 \y p_2 \y ... \y p_n$ es una proposición verdadera, entonces debe ocurrir que $p_1, p_2, ... , p_n$ son proposiciones verdaderas. Notar que la afirmación anterior es una tautología. ¿Cuál es la demostración? Sin embargo, no tenemos el lenguaje matemático para explicitar que todas las proposiciones $p_i$ son verdaderas. 
+
+\begin{definicion}
+	Una \textbf{función proposicional (o predicado)}  $P(x, y, z, ...)$ es una expresión que depende de cero o más variables $x, y, z, ...$ que al ser reemplazadas por elementos de un conjunto de referencia $E$ hacen que $P$ se transforme en una proposición lógica. Es decir, que sea verdadera o falsa. 
+\end{definicion}
+
+\begin{ejemplo}
+	Algunos ejemplos de funciones proposicionales son: 
+	\begin{itemize}
+		\item $P(x):$ ``$x$ es futbolista'' es un predicado sobre el conjunto de referencia de personas. Notar que $P(\text{Christiane Endler})$ es verdadera y que $P(\text{Nicolás Massu})$ es falsa. 
+		\item $P(a,b,c): 2a + b \geq c$ es un predicado sobre el conjunto de números reales.
+	\end{itemize}
+\end{ejemplo}
+
+\begin{definicion}
+	\textbf{(Cuantificador universal)}
+	La expresión $\forall x \in E, P(x)$, que se lee ``para todo $x$ en $E$, $p(x)$'' es una proposición verdadera si al reemplazar $x$ por cualquier elemento de $E$ se verifica que $P(x)$ es verdadera. 
+\end{definicion}
+
+\begin{definicion}
+	\textbf{(Cuantificador existencial)}
+	La expresión $\exists x \in E, P(x)$, que se lee ``existe $x$ en $E$ tal que $P(x)$'', es una proposición que es verdadera si y solo si $\forall x \in E , \sim P(x)$ es falsa. 
+	
+	En otras palabras, $\exists x \in E, P(x)$ será verdadera si es que algún elemento $e$ de $E$ hace que $P(e)$ sea verdadera. 
+\end{definicion}
+
+\begin{definicion}
+	\textbf{(Existencia y Unicidad)}
+	La expresión $\exists ! x \in E, P(x)$ que se lee ``existe un único $x$ en $E$ tal que $P(x)$'', es una proposición que es verdadera si y solo si existe un $e$ en $E$ tal que $P(e)$ es verdadera y para todo $x \neq e$, $P(x)$ es falsa. 
+\end{definicion}
+
+\begin{proposicion}
+	Sea $P(x,y)$ un predicado con conjunto de referencia $E$. Se cumplen las siguientes tautologías: 
+	\begin{itemize}
+		\item $\forall x \in E, \forall y \in E, P(x,y) \iff \forall y \in E, \forall x \in E, P(x,y)$. 
+		\item $\exists x \in E, \exists y \in E, P(x,y) \iff \exists y \in E, \exists x \in E, P(x,y)$
+		\item $\exists x \in E, \forall y \in E, P(x,y) \Longrightarrow \forall y \in E, \exists x \in E, P(x,y)$. 
+	\end{itemize}
+\end{proposicion}
+
+Notar que: 
+\begin{itemize}
+	\item Las afirmaciones de la proposición anterior son válidas para cualquier predicado $P$! 
+	\item La recíproca de la última implicancia no es cierta: basta tomar $E = \N$ y $P(x,y): x > y$ para tener el contraejemplo. 
+\end{itemize}
