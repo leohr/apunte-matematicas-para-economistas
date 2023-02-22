@@ -2,3 +2,48 @@
 \section{Problemas Resueltos}
 
 \section{Problemas Propuestos}
+
+\subsection{Tarea 2 - Otoño 2021}
+
+\begin{problema}{Conjuntos convexos.}
+	\textbf{(1 pto.)} Sean $S_1, S_2 \in \R^n$ conjuntos convexos y $\alpha \in \R$. Definimos la suma y la ponderación de conjuntos como sigue: 
+	$$ S_1 + S_2 = \{ x + y : x \in S_1 , y \in S_2 \} $$ 
+	$$ \alpha S_1 = \{ \alpha x : x \in S_1 \} $$ 
+	Muestre que $S_1 + S_2$ y $\alpha S_1$ son conjuntos convexos. 
+\end{problema}
+
+\begin{problema}{Espacios Vectoriales Normados}
+	\begin{enumerate}[(a)]
+		\item \textbf{(0.5 pts.)} Demuestre que en un espacio vectorial normado los únicos conjuntos que son abiertos y cerrados al mismo tiempo, son el conjunto vacío y el espacio. 
+		
+		\item \textbf{(0.5 pts.)} Considere el espacio vectorial $l_1$ de las sucesiones $(s_n)_{n \in \N}$ que verifican ``$\sum_{n\in \N} |s_n|$ es convergente''. Pruebe que la función $||(s_n)_{n \in \N}||_1 = \sum_{n\in \N} |s_n|$ define una norma en $l_1$. 
+	\end{enumerate}
+\end{problema}
+
+\begin{problema}{Espacios métricos.}
+	Sabemos que la desigualdad triangular es válida en un espacio métrico $(X, d)$. Más formalmente, $\forall x, y, z \in X$ se tiene que: 
+	$$ d(x, y ) \leq d(x, z) + d(z, y) $$ 
+	Una pregunta que surge naturalmente es la siguiente ¿Qué condiciones deben satisfacer $x,y,z$ para que la desigualdad se tenga con igualdad? Es decir, para que se satisfaga que: 
+	$$ d(x, y) = d(x, z) + d(z, y)$$ 
+	Conteste esta interrogante para los siguientes espacios métricos: 
+	
+	\begin{enumerate}[(a)]
+		\item \textbf{(0.5 pts.)} $X = \R$ dotado de la métrica: $d(x,y) = | x - y |$. 
+		\item \textbf{(0.5 pts.)} $X = \R^2$ dotado de la métrica: $d(x, y) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2}$. 
+		\item \textbf{(0.5 pts.)} $X = \R^2$ dotado de la métrica: $d(x,y) = | x_1 - y_1 | + | x_2 - y_2 |$. 
+	\end{enumerate}
+\end{problema}
+
+\begin{problema}{Funciones de varias variables.}
+	\textbf{(1 pto.)} Sean $f$ y $g$ dos funciones cóncavas definidas de $\R^n$ en $\R$. Muestre que si $f$ es no decreciente, entonces $f \circ g$ es cóncava. ¿Es realmente necesario que $f$ sea no decreciente? 
+\end{problema}
+
+\begin{problema}{Diferenciabilidad de funciones de varias variables.}
+	Determine el gradiente, la matriz Hessiana y la concavidad en el punto indicado para las siguientes funciones: 
+	
+	\begin{enumerate}[(a)]
+		\item \textbf{(0.5 pts.)} $f(x_1, x_2) = x_1^3 - x_2^2 - 2x_2$ en el punto $(1, -2)$. 
+		\item \textbf{(0.5 pts.)} $g(x_1, x_2) = 4x_1 + 2x_2 - x_1^2 + x_1 x_2 - x_2^2$ en el punto $(0, 4)$.
+		\item \textbf{(0.5 pts.)} $h(x,y,z) = \ln(x^2 - y z - z^2)$ en el punto $(1, 1)$. 
+	\end{enumerate}
+\end{problema}

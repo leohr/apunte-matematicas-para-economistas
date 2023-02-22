@@ -13,6 +13,11 @@
 \theoremstyle{remark}
 \newtheorem{ejemplo}{Ejemplo}[chapter]
 
+\newcounter{problema}[section]
+\newenvironment{problema}[2][]{\refstepcounter{problema}\par\medskip
+	\noindent \textbf{Problema~\theproblema. #1 #2} \rmfamily}{\medskip}
+
+
 % Comandos 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}

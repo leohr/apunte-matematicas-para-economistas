@@ -2,3 +2,143 @@
 \section{Problemas Resueltos}
 
 \section{Problemas Propuestos}
+
+\subsection{Tarea 1 - Otoño 2021}
+
+\begin{problema}{Lógica.}
+	\begin{enumerate}[(a)]
+		\item \textbf{(0.3 pts.)} ¿Es verdadera o falsa la siguiente proposición? Justifique su respuesta. 
+		$$ \exists x \in \R , \forall y \in \R , x \leq y $$ 
+		
+		\item \textbf{(0.3 pts.)} Sean $p, q$ y $r$ proposiciones lógicas. Pruebe que la siguiente proposición es una tautología: 
+		$$ [(p \Longrightarrow \sim q) \wedge (\sim p \vee q) \wedge r ] \Longrightarrow  \sim p $$ 
+		
+		\item \textbf{(0.4 pts.)} Muestre que la proposición: 
+		$$ \forall x , \exists y \text{ tal que } p(x) \Rightarrow p(y) $$ 
+		Es verdadera para cada predicado $p$. 
+	\end{enumerate}
+\end{problema}
+
+\begin{problema}{Conjuntos.}
+	\begin{enumerate}[(a)]
+		\item  \textbf{(0.4 pts.)} Dados dos conjuntos $A$ y $B$ se define la \textbf{diferencia simétrica}, que denotamos $A\triangle B$, como el conjunto de los elementos que están en $B$, pero no están en $A$, o están en $A$, pero no en $B$. Más formalmente: 
+		$$ A \triangle B = (A \setminus B) \cup (B \setminus A) $$ 
+		
+		Sean $A$ y $B$ dos conjuntos tales que $A\cap B \neq \phi$. Muestre que: $$A \triangle B = (A\cup B) \setminus (B \cap A)$$
+		\item \textbf{(0.3 pts.)} Sean $A, B$ conjuntos no vacíos. Muestre que: 
+		$$ A\cap B = \phi \quad \Longrightarrow \quad A\cup B^c = B^c $$ 
+		
+		\item \textbf{(0.3 pts.)} Sea $A \subseteq \R$. Decimos que $x \in A$ es el \textbf{mínimo} de, que denotamos $\min(A) = x$ si y solo si $\forall y \in A$ $ x \leq y $. Muestre que el mínimo de $A$ es único. 
+	\end{enumerate}
+\end{problema}
+
+\begin{problema}{Funciones.}
+	\begin{enumerate}[(a)]
+		\item \textbf{(0.3 pts.)} Sean $f : A \rightarrow B$ y $g: B \rightarrow C$ funciones. Pruebe que si la composición $g \circ f$ es una función sobreyectiva, entonces $g$ también lo es. Construya además un contraejemplo que muestre que $f$ no necesariamente es sobreyectiva. 
+		
+		\item \textbf{(0.3 pts.)} Sean $f : A \rightarrow B$ y $g: B \rightarrow C$ funciones. Muestre que si $f$ y $g$ son funciones inyectivas, entonces $g \circ f$ también lo es. 
+		
+		\item Sean $A, B$ conjuntos no vacíos. Considere la función $\psi: A \times B \rightarrow A$ definida por: $$ \psi(a, b) = a $$ 
+		
+		\begin{enumerate}
+			\item \textbf{(0.2 pts.)} Demuestre que $\psi$ es sobreyectiva. 
+			\item \textbf{(0.2 pts.)} ¿Bajo qué condiciones sobre el conjunto $B$ la función $\psi$ resulta inyectiva? Justifique su respuesta. 
+		\end{enumerate}
+	\end{enumerate}
+\end{problema}
+
+\begin{problema}{Límites.}
+	\begin{enumerate}[(a)]
+		\item Calcule los límites de las siguientes sucesiones: 
+		\begin{enumerate}
+			\item \textbf{(0.2 pts.)} $(a_n)$ definida por: $$ a_n = \dfrac{2^{n+1} + 1}{2^n - n} $$ 
+			
+			\item \textbf{(0.2 pts.)} $(b_n)$ definida por: $$ b_n = \sqrt[n]{n^3 + n^2 + n} $$
+		\end{enumerate}
+		
+		Podría ser útil recordar que: 
+		$$ \forall x > 1, \lim_{n\rightarrow \infty } \dfrac{n}{x^n} = 0 , \quad \lim_{n\rightarrow \infty } \sqrt[n]{n} = 1 $$ 
+		
+		\item \textbf{(0.2 pts.)} Decimos que una sucesión $(s_n)$ es una \textbf{sucesión acotada} si $\exists M > 0$ tal que $\forall n \in \mathbb{N}$ se tiene que: 
+		$$ | s_n | < M $$ 
+		Sea $(u_n)$ una sucesión convergente. Muestre que $(u_n)$ es una sucesión acotada. 
+		
+		\textbf{Indicación:} Note que para cualquier conjunto finito de números reales $\{p_i\}_{i=1}^n$, existe una constante $M_p$ tal que $|p_i | < M_p, \forall i = 1, ... , n$. 
+		
+		\item \textbf{(0.2 pts.)} Estudie el límite cuando $x$ tiende a $0$ de la función: 
+		$$ f(x) = \dfrac{|x|}{x} $$ 
+		
+		\textbf{Indicación:} Analice los límites laterales. 
+		
+		\item \textbf{(0.2 pts.)} Demuestre, usando la definición de límite de funciones, que: 
+		$$ \lim_{x \rightarrow \infty} \dfrac{1}{\sqrt{x}} = 0 $$ 
+	\end{enumerate}
+\end{problema}
+
+\begin{problema}{Derivadas.}
+	\begin{enumerate}[(a)]
+		\item \textbf{(0.2 pts.)} Utilizando la definición de la derivada, pruebe que dadas $f, g: A\rightarrow B$, se tiene que: 
+		$$ ( f + g ) ' = f' + g' $$ 
+		$$ ( f\cdot g) ' = f' g + f g' $$ 
+		
+		\item Derive las siguientes funciones de variable real a valores reales: 
+		
+		\begin{enumerate}
+			\item \textbf{(0.2 pts.)} $f(x) = x^3 - 2x cos(x) + 2 - x^2 sen(x)$. 
+			
+			\item \textbf{(0.2 pts.)} $g(x) = x^2 ln(x) + e^{4sen(x)cos(x)} $.
+		\end{enumerate}
+		
+		\item \textbf{(0.2 pts.)} Muestre que la derivada de la función $f: \R \rightarrow \R$ definida por: 
+		$$ f(x) = \dfrac{e^x}{x^x} $$ 
+		Viene dada por $ f'(x) = - f(x) \ln (x)$. 
+		
+		\item Considere un mercado con función de demanda inversa dada por: 
+		$$ P(q) = 100 - q $$ 
+		Y una firma con función de costos dada por: 
+		$$ C(q) = q^2 + 10 q $$ 
+		\begin{enumerate}
+			\item \textbf{(0.1 pts.)} Suponga que cuando la firma se comporta de manera competitiva, la condición de equilibrio es que $P(q) = C'(q)$.  Encuentre el precio y la cantidad de equilibrio. ¿Cuál es la utilidad de la firma? 
+			
+			\item \textbf{(0.1 pts.)} Caracterice el equilibrio considerando comportamiento monopólico por parte de la firma. Es decir, cuando ella resuelve: 
+			$$ \max _{q \geq 0} P (q) \cdot q - C(q) $$ 
+			
+			Compare sus respuestas. 
+		\end{enumerate}
+	\end{enumerate}
+\end{problema}
+
+\begin{problema}{Matrices.}
+	\begin{enumerate}[(a)]
+		\item \textbf{(0.2 pts.)} Sean $D = diag(\lambda_1, ... , \lambda_n) \in M_{nn}$, $A \in M_{np}$ y $B\in M_{mn}$. Demuestre que: 
+		$$ DA = \begin{pmatrix}
+			\lambda_1 A_{1\cdot} \\ \vdots \\ \lambda_n A_{n\cdot}
+		\end{pmatrix}, \quad BD = \begin{pmatrix}
+			\lambda_1 B_{\cdot 1} & \cdots & \lambda_n B_{\cdot n}
+		\end{pmatrix}$$ 
+		Recuerde que, dada una matriz $A \in M_{mn}$, $A_{i\cdot}$ denota su $i$-ésima fila y $A_{\cdot j}$ si $j$-ésima columna: 
+		$$ A_{i\cdot } = \begin{pmatrix}
+			a_{i1} &a_{i2} &\cdots &a_{in} 
+		\end{pmatrix}, \quad A_{\cdot j} = \begin{pmatrix}
+			a_{1j} \\ a_{2j} \\ \vdots \\ a_{mj}
+		\end{pmatrix} $$ 
+		
+		\item Sea $\mathcal{H} = \{ H = (h_{ij}) \in M_{nn}: h_{ij} = 0 , \forall i > j +1 \}$. 
+		\begin{enumerate}
+			\item \textbf{(0.2 pts.)} Muestre que $\mathcal{H}$ es subespacio vectorial de $M_{nn}$. 
+			\item \textbf{(0.2 pts.)} Demuestre que si $T \in M_{nn}$ es triangular superior, $H \in \mathcal{H}$, entonces $T \cdot H \in \mathcal{H}$. 
+		\end{enumerate}
+		
+		\item \textbf{(0.2 pts.)} Sea $u \in \R^n$ tal que $\sum_{i=1}^{n} u_i^2 = 1$. Muestre que la matriz
+		$$ A = I - 2 u u ^t $$ 
+		es invertible, con $A^{-1} = A$. 
+		
+		\item \textbf{(0.2 pts.)} Sea la matriz $A$ dada por: 
+		$$ A = \begin{pmatrix}
+			k & 2 & 1 \\
+			2 & -1 & p \\
+			1 & 2 & 0 
+		\end{pmatrix}$$ 
+		Determine valores de $k$ y $p$ de modo que $(1, 1, 1)^t$ sea vector propio de $A$. 
+	\end{enumerate}
+\end{problema}
