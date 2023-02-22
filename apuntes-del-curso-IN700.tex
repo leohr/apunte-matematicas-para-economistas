@@ -1,0 +1,30 @@
+
+\documentclass[11pt,fancychapters]{report}
+
+\include{preambulo/paquetes}
+\include{preambulo/formato}
+\include{preambulo/comandos}
+
+
+\title{IN700 - Matemáticas para Economistas}
+\author{Leonel Huerta \\ Piero Zanocco }
+\newdateformat{monthyeardate}{\monthname[\THEMONTH], \THEYEAR}
+
+
+\begin{document}
+
+\maketitle
+\pagenumbering{gobble}
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\include{capitulos/1.preliminares}
+\include{problemas/1.problemas-cap1}
+\include{capitulos/2.analisis}
+\include{capitulos/3.optimizacion}
+\include{capitulos/4.extensiones}
+
+\end{document}
