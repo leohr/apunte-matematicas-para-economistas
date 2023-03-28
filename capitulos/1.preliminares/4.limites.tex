@@ -118,3 +118,77 @@ El conjunto de todos los puntos de acumulación de $A\subseteq \R$ se denota por
 	Si $\exists \delta > 0, \forall x \in Dom(g) \cap [\bar{x} - \delta , \bar{x} + \delta ] f(x) \leq g(x) \leq h(x) $, y además $\lim_{x\rightarrow\bar{x}} f(x) = \lim_{x\rightarrow\bar{x}} h(x) = l$, entonces: 
 	$$ \lim_{x\rightarrow\bar{x}} g(x) = l $$ 
 \end{teorema}
+
+
+Los siguientes límites se obtienen de manera sencilla y se entenderán como conocidos: 
+
+\begin{proposicion}
+	Son límites conocidos:
+	\begin{itemize}
+		\item $\lim_{x\rightarrow\bar{x}} c = c $
+		\item $\lim_{x\rightarrow\bar{x}} x = \bar{x}$
+		\item $\lim_{x\rightarrow\bar{x}} (a_n x^n + ... + a_1 x + a_0) = (a_n \bar{x}^n + ... + a_1 \bar{x} + a_0)$
+		\item $\lim_{x\rightarrow\bar{x}} \sqrt{x} = \sqrt{\bar{x}}$
+		\item $\lim_{x\rightarrow\bar{x}} sen(x) = sen(\bar{x})$
+		\item $\lim_{x\rightarrow\bar{x}} cos(x) = cos(\bar{x})$ 
+		\item $\lim_{x\rightarrow\bar{x}} e^x = e^{\bar{x}}$
+		\item $\lim_{x\rightarrow\bar{x}} \ln(x) = \ln(\bar{x})$ 
+	\end{itemize}
+\end{proposicion}
+
+Por otra parte, usando el teorema del sandwich y desigualdades conocidas para las respectivas funciones, es posible calcular los siguientes límites (que también se entenderán como conocidos): 
+
+\begin{proposicion}
+	Son límites conocidos:
+	\begin{itemize}
+		\item $\lim_{x\rightarrow 0} \dfrac{sen(x)}{x} = 1$
+		\item $\lim_{x\rightarrow 0} \dfrac{1 - cos(x)}{x^2} = \frac{1}{2}$ 
+		\item $\lim_{x\rightarrow 1} \dfrac{\ln}{x - 1} = 1$ 
+		\item $\lim_{x\rightarrow 0} \dfrac{e^x _- 1}{x} = 1$
+	\end{itemize}
+\end{proposicion}
+
+Una técnica muy utilizada para analizar los límites de una función corresponde a la de estudiar los \textit{límites laterales...}
+	
+
+\begin{definicion}
+	\textbf{(Límites laterales)}
+	Sea $f : A \subseteq \R \rightarrow \R$ y sea $\bar{x}\in \R$. Si denotamos por $A^+ = A \cap (\bar{x}, \infty )$ y por $A^- = A  \cap (- \infty, \bar{x})$ , entonces: 
+	\begin{itemize}
+		\item Se llama \textbf{límite lateral por la derecha } de la función $f$ en $\bar{x}$ a $\lim_{x\rightarrow\bar{x}, x \in A^+} f(x)$. Lo denotamos por $\lim_{x\rightarrow \bar{x}^+} f(x)$. 
+		\item Se llama \textbf{límite lateral por la izquierda } de la función $f$ en $\bar{x}$ a $\lim_{x\rightarrow\bar{x}, x \in A^-} f(x)$. Lo denotamos por $\lim_{x\rightarrow \bar{x}^-} f(x)$. 
+	\end{itemize}
+\end{definicion}
+
+Muchas veces se habla de que el límite de una función existe cuando sus límites laterales existen y son iguales. Lo siguiente proposición enuncia lo anterior: 
+
+\begin{proposicion}
+	Sea $f: A \subseteq \R\longrightarrow \R$. Se tiene que: 
+	$$ \lim_{x\rightarrow\bar{x}} f(x) = l \quad \iff \quad \lim_{x\rightarrow \bar{x}^+} f(x) = \lim_{x\rightarrow \bar{x}^-} f(x) = l $$ 
+\end{proposicion}		
+
+
+
+\begin{proposicion}
+	\textbf{(Caracterización $\varepsilon-\delta$ del límite)}
+	
+	Sea $f: A \subseteq \R\longrightarrow \R$ y $\bar{x}$ un punto de acumulación de $A$. Entonces: 
+	$$ \lim_{x\rightarrow\bar{x}} f(x) = l \iff \forall \varepsilon > 0, \exists\delta > 0 , \forall x\in A ([\bar{x}- \delta , \bar{x}+\delta ]\setminus\{x\}]), | f(x) - l | \leq \varepsilon $$ 
+	Equivalentemente: 
+	$$ \lim_{x\rightarrow\bar{x}} f(x) = l \iff \forall \varepsilon > 0, \exists\delta > 0 , \forall x \in A , (| x - \bar{x}| \leq \delta \Longrightarrow | f(x) - l | \leq \varepsilon )$$ 
+\end{proposicion}
+
+Por último, introducimos la noción de límites hacia $\pm \infty$. Propiedades como el álgebra de límites, el teorema del sandwich, la unicidad siguen siendo válidas en este contexto y estudiarlas queda de tarea. 
+
+\begin{definicion}
+	\textbf{(Límites hacia $\pm \infty$)}
+	
+	Sea $f: A \subseteq \R\longrightarrow \R$ y sea $l$ un real fijo. 
+	\begin{itemize}
+		\item Si $A$ no es acotado superiormente, entonces: 
+		$$\lim_{x\rightarrow\infty} f(x) = l \iff \forall \varepsilon > 0, \exists m > 0, \forall x\in A\cap [m, \infty) , | f(x) - l | \leq \varepsilon $$ 
+		\item Si $A$ no es acotado inferiormente, entonces: 
+		$$\lim_{x\rightarrow-\infty} f(x) = l \iff \forall \varepsilon > 0, \exists m > 0, \forall x\in A\cap (-\infty, m] , | f(x) - l | \leq \varepsilon $$ 
+	\end{itemize}
+\end{definicion}
+	
