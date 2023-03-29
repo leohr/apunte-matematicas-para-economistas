@@ -192,3 +192,75 @@ Por último, introducimos la noción de límites hacia $\pm \infty$. Propiedades
 	\end{itemize}
 \end{definicion}
 	
+	
+\subsection{Continuidad}
+
+\begin{definicion}
+	\textbf{(Función continua en un punto)}
+	Sea $f: A \subseteq \R \longrightarrow \R$ y $\bar{x} \in A$. Diremos que $f$ es una \textbf{función continua} en $\bar{x}$ si: 
+	$$ \forall(x_n)_n \subseteq A , \quad x_n \longrightarrow \bar{x} \Longrightarrow f(x_n) \longrightarrow f(\bar{x}) $$ 
+\end{definicion}
+
+\begin{nota}
+	La definición anterior impone que la propiedad debe ser verificada para toda sucesión convergente a $\bar{x}$ con valores en $A$. 
+\end{nota}
+
+\begin{ejemplo}
+	Las siguientes funciones son continuas: 
+	
+	\begin{itemize}
+		\item $f(x) = c$, con $c \in \R$ es continua $\forall \bar{x} \in \R$. 
+		\item $f(x) = x$ es continua $\forall \bar{x} \in \R$.
+		\item $f(x) = \sin(x)$ es continua $\forall \bar{x} \in \R$.
+		\item $f(x) = \cos(x)$ es continua $\forall \bar{x} \in \R$.
+		\item $f(x) = e^x$ es continua $\forall \bar{x} \in \R$.
+		\item $f(x) = \ln(x)$ es continua $\forall \bar{x} \in \R$.
+	\end{itemize}
+\end{ejemplo}
+
+\begin{proposicion}
+	\textbf{(Álgebra de funciones continuas)} 
+	Sean $f: A \subseteq \R \longrightarrow \R$ y $g: B\subseteq \R \longrightarrow \R$ dos funciones continuas en $\bar{x} \in A \cup B$. Las siguientes funciones son continuas en $\bar{x}$: 
+	\begin{itemize}
+		\item $f + g$. 
+		\item $f - g$. 
+		\item $\lambda f$, con $\lambda \in \R$. 
+		\item $f\cdot g$. 
+		\item $f/g$, cuando $g(\bar{x})\neq 0$. 
+	\end{itemize}
+\end{proposicion}
+
+\begin{proof}
+	\textcolor{red}{To be added...}
+\end{proof}
+
+\begin{teorema}
+	\textbf{(Composición de funciones continuas)}
+	Sean $f: A \subseteq \R \longrightarrow \R$ y $g: B\subseteq \R \longrightarrow \R$ dos funciones. Si $f$ es continua en $\bar{x} \in A$ y $g$ es continua en $f(\bar{x}) \in B$, entonces la función $(g \circ f)$ es continua en $\bar{x}$. 
+\end{teorema}
+
+\begin{proof}
+	Sea $(x_n)_{n\in\N}$ una sucesión con valores en $Dom(g \circ f)$ que converge a $\bar{x}$. Notemos primero que si $x \in Dom(g \circ f)$, entonces $x \in Dom(f)$ y $f(x) \in Dom(g)$. Luego, $\forall n \in \N$, $x_n \in Dom(f)$ y $f(x_n) \in Dom(g)$. Ahora, como $f$ es continua en $\bar{x}$ y $x_n\rightarrow \bar{x}$, entonces $f(x_n) \rightarrow f(\bar{x})$. Como además $g$ es continua en $\bar{x}$, entonces $g(f(x_n)) \rightarrow g(f(\bar{x}))$, con lo que se concluye el resultado. 
+\end{proof}
+
+\begin{proposicion}
+	\textbf{(Caracterización $\varepsilon-\delta$ de la continuidad)}
+	Sean $f: A \subseteq \R \longrightarrow \R$ y $\bar{x} \in A$. La función $f$ es continua en $\bar{x}$ si y solo si $\forall \varepsilon > 0, \exists \delta > 0, \forall x \in A$: 
+	$$ | x - \bar{x} | \leq \delta \quad \Longrightarrow \quad |f(x) - f(\bar{x}) | \leq \varepsilon $$ 
+\end{proposicion}
+
+\begin{proof}
+	\textcolor{red}{To be added...}
+\end{proof}
+
+\begin{proposicion}
+	Sean $f: A \subseteq \R \longrightarrow \R$ y $\bar{x} \in A$. La función $f$ es continua en $\bar{x}$ si y solo si $\lim_{x\rightarrow\bar{x}} f(x) = f(\bar{x})$. 
+\end{proposicion}
+
+\begin{proof}
+	\textcolor{red}{To be added...}
+\end{proof}
+
+\begin{definicion}
+	\textbf{(Función continua)} Sea $f: A \subseteq \R \longrightarrow \R$. Si $f$ es continua en $\bar{x}, \forall \bar{x} \in A$, diremos que $f$ es una \textbf{función continua}. 
+\end{definicion}
