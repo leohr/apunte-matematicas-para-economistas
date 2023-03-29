@@ -123,9 +123,9 @@ A modo de motivación, consideramos la función $f(x) = x^2$. Lo que queremos ha
 
 
 \begin{definicion}
-	\textbf{(Sumas superiores e inferiores)} Sea $f$ una función definida, continua y acotada en $[a, b]$. Sea $P = \{ x_0, x_1, ... , x_n\}$ una partición de $[a, b]$. Como $f$ es acotada en $[a, b]$, también lo es en cada intervalo $I_i = [ x_{i-1}, x_i]$, $\forall i = 1, ..., n$. Por lo tanto, podemos definir: 
-	$$ m_i(f) = min\{f(x) : x \in [ x_{i-1}, x_i]\}$$ 
-	$$ M_i(f) = max\{f(x) : x \in [ x_{i-1}, x_i]\}$$ 
+	\textbf{(Sumas superiores e inferiores)} Sea $f$ una función definida y acotada en $[a, b]$. Sea $P = \{ x_0, x_1, ... , x_n\}$ una partición de $[a, b]$. Como $f$ es acotada en $[a, b]$, también lo es en cada intervalo $I_i = [ x_{i-1}, x_i]$, $\forall i = 1, ..., n$. Por lo tanto, podemos definir: 
+	$$ m_i(f) = inf\{f(x) : x \in [ x_{i-1}, x_i]\}$$ 
+	$$ M_i(f) = sup\{f(x) : x \in [ x_{i-1}, x_i]\}$$ 
 	Se definen las sumas: 
 	$$ S(f, P) = \sum_{i=1}^n M_i(f) (x_i - x_{i-1})$$
 	$$ s(f, P) = \sum_{i=1}^n m_i(f) (x_i - x_{i-1})$$
