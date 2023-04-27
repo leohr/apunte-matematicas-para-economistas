@@ -1,0 +1,360 @@
+
+\newpage
+\section{Espacios vectoriales}
+
+\begin{itemize}	
+	\item Referencias: 	Apunte Álgebra Lineal, capítulo Espacios vectoriales. 
+	\bigskip 
+	\item Produndización sugerida: Apunte Álgebra lineal, capítulo Transformaciones Lineales. 
+\end{itemize}
+
+El carácter lineal de $\R^n$ inspira un tipo de estructura algebraica más general: los famosos espacios vectoriales. 
+
+\begin{definicion}
+	\textbf{Definición (grupo abeliano)}
+	Dado $V$ un conjunto y $+$ una operación, diremos que el par $(V, +)$ es un \textbf{grupo abeliano} si: 
+	\begin{itemize}
+		\item $+$ es ley de composición interna: al operar elementos de $v$ mediante la operación $+$ se obtienen elementos de $v$. 
+		\item $+$ es asociativa y conmutativa. 
+		\item Existe un neutro, $0\in V$, tal que $\forall x \in V: x + 0 = 0 + x = x $. 
+		\item $\forall x \in V$, existe un inverso aditivo, $-x \in V$ tal que: 
+		$$ x + (-x) = (-x) + x = 0 $$ 
+	\end{itemize}
+\end{definicion}
+
+\begin{ejemplo}
+	\textbf{Ejemplo:} $\R^n$ con la suma conforma un grupo abeliano. 
+\end{ejemplo}
+
+\begin{definicion}
+	Dado un grupo abeliano $(V, +)$ y un cuerpo $(\mathbb{K}, + , \cdot)$ con una ley de composición externa (es decir, una función de $K\times V$ en $V$ que a $(\lambda, v)$ asocia $\lambda v \in V$), diremos que $V$ es un \textbf{espacio vectorial} sobre $\K$ si y solo si la ley de composición externa satisface que $\forall \lambda, \beta \in \K, x, y \in V$: 
+	\begin{enumerate}
+		\item $(\lambda \ + \beta) x = \lambda x + \beta x$ 
+		\item $\lambda (x + y  )=\lambda x + \lambda y $
+		\item $\lambda (\beta x) = (\lambda \beta ) x $ 
+		\item $ 1 x = x $, donde 1 es el neutro multiplicativo del cuerpo $\K$. 
+	\end{enumerate}
+	En tal caso, los elementos de $V$ se denominan vectores y los de $\K$ escalares. 
+\end{definicion}
+	
+\begin{nota}
+	\begin{itemize}
+		\item La noción de cuerpo no ha sido estudiada y escapa de los alcances de este curso. Por el momento, se puede pensar que un cuerpo es una estructura similar a los números reales. Esta se compone de un conjunto, una operación llamada \textit{suma} y una operación llamada \textbf{multiplicación}.   
+		\item $(\R^n, +)$ con $(\R, + , \cdot)$ conforma un espacio vectorial.   
+		\item Para simplificar la notación omitiremos la dependencia de las operaciones al referirnos al grupo abeliano y al cuerpo. 
+	\end{itemize}
+\end{nota}
+
+\begin{definicion}
+	\textbf{Definición (subespacio vectorial)}
+	Sea $V$ un espacio vectorial sobre un cuerpo $\K$. Diremos que $U \neq \phi$, es un subespacio vectorial (s.e.v) de $V$ si y solo si: 
+	\begin{enumerate}
+		\item $\forall u, v \in U, u + v \in U $. 
+		\item $\forall \lambda \in K, \forall u \in U, \lambda u \in U$. 
+	\end{enumerate}
+\end{definicion}
+
+\begin{proposicion}
+	Sea un espacio vectorial $V$ sobre un cuerpo $K$. $U \neq \phi$ sera subespacio vectorial de $V$ si y solo si: 
+	$$ \forall \lambda _1 , \lambda_2 \in \K , \forall u_1, u_2 \in U, \lambda_1 u_1  + \lambda_2 u_2 \in U $$ 
+\end{proposicion}
+
+\begin{proof}
+	Para la demostración de derecha a izquierda basta tomar $\lambda _1 = \lambda _2 = 1$ para verificar la primera propiedad y $\lambda_2 = 0$ para verificar la segunda.   
+	
+	Para la demostración en el otro sentido, notar que la segunda propiedad implica que $ \lambda_1 u_1 \in U $ y $\lambda_2 u_2 \in U$. Usando la propiedad 1 se concluye que $\lambda_1 u_1 + \lambda_2 u_2 \in U$. 
+\end{proof}
+
+Una noción que se utiliza bastante en economía es la siguiente: 
+
+\begin{definicion}
+	\textbf{(Combinación lineal)}
+	Sea $V$ un espacio vectorial sobre un cuerpo $\K$ y una colección de vectores $v_1, v_2, ... ,v_n \in V$ y de escalares $\lambda_1 , \lambda_2, ... , \lambda_n \in K$. Denominamos \textbf{combinación lineal} a la suma ponderada de estos vectores: 
+	$$ \sum_{k=1}^n \lambda_i v_i = \lambda_1 v_1  + ... + \lambda_n v_n \in V $$ 
+	Dado un conjunto fijo de vectores $v_1, ... , v_n \in V$, definimos el conjunto de todas sus combinaciones lineales como: 
+	$$ \langle \{ v_1, ... , v_n \} \rangle = \{ v \in V : v = \sum_{k=1}^n \lambda_i v_i , \lambda_i \in K \} $$ 
+\end{definicion}
+
+\begin{proposicion}
+	Sean $V$ e.v. y $v_1, ... , v_2  \in V$. Entonces, $\langle \{ v_1, ... , v_n \} \rangle$ es un subespacio vectorial de $V$. Más aún, es el s.e.v. más pequeño que contiene los vectores $v_1, ... , v_n$, es decir, si otro s.e.v. $U$ los contiene, entonces $\langle \{ v_1, ... , v_n \} \rangle \subseteq U$. 
+	
+	Por lo anterior, a $\langle \{ v_1, ... , v_n \} \rangle$ se le llama \textbf{subespacio vectorial generado} por $\{v_i\}_{i=1}^n$.
+\end{proposicion}
+
+\begin{definicion}
+	\textbf{Definición (dependencia e independencia lineal)}
+	Sea $\{v_i\}_{i=1}^n \subseteq V$, diremos que estos vectores son \textbf{linealmente dependientes} (ld) si y solo si existen escalares $\{ \lambda_1, ... \lambda_n \}$ no todos nulos, tales que $\sum_{i=1}^n \lambda_i v_i = 0$. En caso contrario, es decir, cuando $\sum_{i=1}^n \lambda_i v_i = 0$ implica que $\lambda _i = 0$ para todo $i = 1 , ..., n$, diremos que el conjunto de vectores $\{v_i\}_{i=1}^n$ es \textbf{linealmente independiente} (li). 
+\end{definicion}
+
+\begin{ejemplo}
+	\begin{itemize}
+		\item El conjunto $\{(1,1), (2,2)\}$ es un conjunto linealmente dependiente.   
+		\item El conjunto $\{(1,0), (0,1)\}$ es un conjunto linealmente independiente. 
+	\end{itemize}  
+\end{ejemplo}
+
+\begin{proposicion}
+	En $\R^n$, $m > n$ vectores son siempre linealmente dependientes.
+\end{proposicion}
+
+\begin{definicion}
+	\textbf{(Base)}
+	Dado un espacio vectorial $V$ sobre $\K$, diremos que el conjunto de vectores $\{ v_i\_{i = 1}^n$ es una \textbf{base} de $V$ si y solo si: 
+	\begin{enumerate}
+		\item $\{v_i\}_{i=0}^n$ es un conjunto l.i. 
+		\item $V = \langle \{v_1, ... , v_n\}\rangle$. 
+	\end{enumerate}
+\end{definicion}
+
+\begin{ejemplo}
+	\begin{itemize}
+		\item $\{(1,0), (1,1)\}$ y $\{(1,0), (0,1)\}$ son bases de $\R^2$. 
+		\item $\{(1,0), (1,1), (0,1)\}$ no es base de $\R^2$. 
+	\end{itemize} 
+\end{ejemplo}
+
+\begin{proposicion}
+	Dado un espacio vectorial $V$, $B$ es una base si y solo si $\forall v \in V, v$ se escribe de \textbf{manera única } como combinación lineal de los vectores del conjunto $B$. 
+\end{proposicion}
+
+\begin{proof}
+	\begin{itemize}
+		\item $\Rightarrow )$ Como $B$ es base, $\langle B \rangle = V$, luego $v$ se escribe como combinación lineal de los vectores de $B$.   Supongamos que esto puede hacerse de dos maneras: 
+		$$ v = \sum_{i=1}^n \alpha_i v_i = \sum_{i=1}^n \beta_i v_i $$ 
+		Luego:   
+		$$ \sum_{i=1}^n (\alpha_i - \beta_i ) v_i = 0$$ 
+		Como $B$ es un conjunto li, entonces $\alpha_i - \beta_i = 0$ para todo $i$.   
+		\item $\Leftarrow)$ Por hipótesis, cualquier vector $v \in V$ es combinación lineal del conjunto $B$, luego $B$ es generador. Supongamos que $B$ es ld. Entonces $\sum_{i=1}^n \lambda_i v_i = 0$ con escalares no todos nulos. Por otra parte:
+		$$ 0 v_1  + 0 v_2 + ... + 0v_n = 0$$   
+		Por lo que podemos escribir el vector $0$ de dos maneras distintas, lo que es una contradicción. 
+		
+		Se sigue que $B$ es base. 
+	\end{itemize}
+\end{proof}
+
+\begin{corolario}
+	Si $\{ v_i \}_{i=1}^n$ y $\{ u_i \}_{i= 1}^m$ son bases de un espacio vectorial, entonces $n= m$.
+\end{corolario}
+
+\begin{definicion}
+	\textbf{(Dimensión)}
+	Diremos que un espacio vectorial $V$ sobre $K$ es de \textbf{dimensión} $n$ si admite una base de cardinalidad $n$. Cuando no exista una base finita, diremos que el espacio vectorial es de dimensión infinita. 
+\end{definicion}
+
+\begin{teorema}
+	Sea $dim(V) = n$. Si $\{v_i\}_{i=1}^n$ es li, entonces $\{v_i\}_{i=1}^n$ es base. 
+\end{teorema}
+
+\begin{proof}
+	Basta probar que $V = \langle \{v_1, ... , v_n\}\rangle$. Supongamos que $\exists u \notin \langle \{v_1, ... , v_n\}\rangle$. Luego, $B = \{ u, v_1, ... , v_n\}$ es un conjunto li y $|B| = n+1 > n$. Esto es una contradicción con el corolario anterior, pues este conjunto tiene cardinal mayor a la dimensión de la base.
+\end{proof}
+
+
+\begin{definicion}
+	\textbf{(Valores y vectores propios)}
+	Dada una matriz $A \in M_{nn}$, diremos que $x \in \R^n\setminus \{ 0\}$ es un \textbf{vector propio} y $\lambda \in \R$ es un valor propio asociado a $x$ si: 
+$$ Ax = \lambda x $$ 
+\end{definicion}
+
+
+
+
+\section{Espacios vectoriales normados}
+
+\begin{itemize}
+	\item En esta clase retomamos el contexto de los espacios vectoriales. 
+	\bigskip 
+	\item Estamos interesados en incorporar un concepto más al análisis: el de norma. 
+	\bigskip 
+	\item Esta noción será fundamental, pues nos permitirá incorporar la noción de vecindad o de cercanía entre elementos del espacio. 
+	\bigskip 
+	\item Referencias: Apunte Cálculo en Varias Variables (Correa). 
+\end{itemize}
+
+\subsection{Conceptos preliminares}
+
+\begin{definicion}
+	\textbf{(Espacio Vectorial Normado)}
+	Un \textbf{espacio vectorial normado (evn)} es un espacio vectorial $E$ sobre el cuerpo $\R$ dotado de una aplicación de $E$ en $\R$, llamada norma y que denotamos $|| \cdot ||$, con las siguientes tres propiedades: $\forall a,b \in E, \forall \lambda \in \R$: 
+	\begin{itemize}
+		\item $|| a || = 0 \iff a = 0$. 
+		\item $|| \lambda a || = | \lambda | || a ||$
+		\item $|| a + b || \leq || a || + || b ||$
+	\end{itemize} 
+\end{definicion}
+\begin{ejemplo}
+	Son normas para $\R^n$: 
+	\begin{itemize}
+		\item  $||a||_2 = \sqrt{\sum_{i=1}^{n} a_i^2}$
+		\item $||a||_1 = \sum_{i=1}^n |a_i|$ 
+		\item $||a||_p = \left(\sum_{i=1}^n |a_i|^p \right)^{1/p}$
+		\item $||a||_\infty = \max_{i = 1, ... n} | a_i |$
+	\end{itemize}
+\end{ejemplo}
+
+\begin{definicion}
+	\textbf{(Distancia)}
+	Dados dos elementos $a, b$ de un evn $E$, se llama \textbf{distancia} de $a$ a $b$ a la cantidad $||a - b ||$. De este modo, la cantidad $||a||$ corresponde a la distancia de $a$ al origen $0$. 
+\end{definicion}
+
+\begin{definicion}
+	\textbf{(Bola abierta/cerrada)}
+	Dado un elemento $c$ en un evn $E$ y un real $r > 0$: 
+	\begin{itemize}
+		\item Se llama \textbf{bola cerrada} de centro $c$ y radio $r$ al conjunto: 
+		$$ B(c, r ) = \{ x \in E : || c - x || \leq r \} $$ 
+		\item Se llama \textbf{bola abierta} de centro $c$ y radio $r$ al conjunto: 
+		$$ B'(c,r) = \{ x \in E : || c - x || < r \} $$ 
+	\end{itemize}	
+\end{definicion}
+
+\begin{nota}
+	\textbf{Pregunta:} Considere $c = 0$ y $r = 1$. ¿Cómo cambian las bolas de $\R^n$ cuando cambia la norma? 
+\end{nota}
+
+\begin{definicion}
+	\textbf{(Conjunto acotado)}
+	Un conjunto $A$ de un evn $E$ se dirá \textbf{acotado} si existe $r > 0$ tal que $A \subseteq B(0, r )$, es decir, tal que $ || x || \leq r $, para todo $x \in A$. 	
+\end{definicion}
+
+\begin{definicion}
+	\textbf{(Normas equivalentes)}
+	Dos normas $||\cdot||_1$ y $||\cdot||_2$, definidas en un ev $E$ se dirán \textbf{equivalentes} si existen dos constantes $L_1$ y $L_2$ tales que: 
+	$$ || \cdot ||_2 \leq L_1 || \cdot ||_1 , \quad || \cdot ||_1 \leq L_2 || \cdot ||_2 $$ 
+\end{definicion}
+
+\begin{nota}
+	\begin{itemize}
+		\item Las desigualdades de la desigualdad anterior se pueden escribir de manera equivalente como: \textit{para toda bola $B_2(0, \varepsilon)$ existe una bola $B_1(0, \delta) \subseteq B_2(0, \varepsilon)$} y \textit{para toda bola $B_1(0, \varepsilon)$ existe una bola $B_2(0, \delta) \subseteq B_1(0, \varepsilon)$}, respectivamente.   
+		
+		\item Es posible demostrar que en un espacio de dimensión finita (como $\R^n$), todas las normas son equivalentes. 
+	\end{itemize}
+\end{nota}
+
+\subsection{Conjuntos abiertos y cerrados}
+
+\begin{definicion}
+	\textbf{(Conjunto abierto/cerrado)}
+	Diremos que un conjunto $A$ de un evn $E$ es \textbf{abierto} si para todo $A$ existe una bola $B(a, \delta) \subseteq A$. Un conjunto $A$ de un evn $E$ se dirá \textbf{cerrado} si su complemento $A^c$ es abierto. 
+\end{definicion}
+
+\begin{nota}
+	\begin{itemize}
+		\item En general, los conjuntos abiertos dependen de la norma con que se dote al ev $E$. 
+		\item Cuando las normas son equivalentes, los conjuntos abiertos son los mismos. 
+		\item En consecuencia, cuando las normas son equivalentes, los conjuntos cerrados también son los mismos. 
+	\end{itemize}
+\end{nota}
+
+\begin{ejemplo}
+	Veamos que en un evn $E$ toda bola abierta $B'(c, r)$ es un conjunto abierto.   
+	
+	En efecto, sea $a \in B'(c, r)$.   Luego, $ ||c - a || < r$.   Escojamos $\delta >  0$ tal que $\delta < r - ||c - a||$ y veamos que: 
+	$$ B ( a, \delta) \subseteq B'(c, r)$$ 
+	Si $x \in B(a, \delta)$, entonces: 
+	$$ || a - x || \leq \delta \quad \Rightarrow \quad || a - x || < r - || c - a || $$  
+	Y esto lo podemos reescribir como: 
+	$$ || a - x || + || c - a || < r $$   
+	Como $|| a - x ||> 0$, entonces: 
+	$$ || c - x || < r || $$   
+	Y se concluye que: 
+	$$ x \in B'(c, r) $$   
+	Lo que prueba que $B'(c, r)$ es un conjunto abierto.
+\end{ejemplo}
+
+\begin{teorema}
+	Si denotamos por $\tau$ a la familia de todos los subconjuntos abiertos de un evn $E$, se tienen las siguientes propiedades: 
+	\begin{enumerate}
+		\item $E \in \mathcal{T}$ y $\phi \in \mathcal{T}$. 
+		\item Si $\{A_i\}_{i=1}^n$ es una familia finita de elementos de $\mathcal{T}$, entonces: $$\bigcap_{i=1}^n A_i \in \mathcal{T} $$ 
+		\item Si $\{A_t\}_{t\in T}$ es una familia cualquiera de elementos de $\mathcal{T}$, entonces: 
+		$$ \bigcup_{t\in T}A_t \in \mathcal{T}$$ 
+	\end{enumerate}
+\end{teorema}
+
+\begin{proof}
+	\begin{enumerate}
+		\item Probar que $E \in \mathcal{T}$ es directo. La demostración de que $\phi \in \mathcal{T}$ se sigue de que $\phi$ no tiene elementos. 
+		
+		\item Sea $\{A_i\}_{i=1}^n$ una familia finita de abiertos. Debemos ver que: 
+		$$ A = \bigcap_{i=1}^n A_i $$ 
+		es un conjunto abierto.   
+		
+		Si $A = \phi$, el resultado se tiene por la parte anterior.   
+		
+		Si $A \neq \phi$, dado $a \in A$, se tendrá que $a \in A_i, \forall i = 1, ... , n$ y, como los $A_i$ son abiertos, existen $\delta_1, ... , \delta_n > 0$ tales que: $$ B(a, \delta_i) \subseteq A_i, \forall i= 1, ...., n$$  
+		
+		Definiendo $\delta = \min \{ \delta_i , i = 1, ... , n \} > 0$ se tendrá que: $$B(a, \delta) \subseteq B(a, \delta_i) \subseteq A_i, \forall i = 1 , ... , n$$  
+		Lo que implica que $B(a, \delta) \subseteq A$ y prueba que $A$ es abierto. 
+		
+		\item Sean $\{A_t\}_{t\in T}$ conjuntos abiertos. Veamos por último que el conjunto: 
+		$$ A = \bigcup_{t\in T} A_t$$ 
+		es abierto.   
+		
+		Sea $a \in A$, entonces $a \in A_t$ para algún $t \in T$.   
+		
+		Como $A_t$ es abierto, existirá $\delta > 0$ tal que $B(a , \delta) \subseteq A_t$.   
+		
+		Esto implica que $B(a, \delta) \subseteq A$, con lo que hemos demostrado que $A$ es abierto.
+	\end{enumerate}
+\end{proof}
+
+
+\begin{definicion}
+	\textbf{(Interior)}
+	Se llama interior de un conjunto $A$ en un evn $E$ al conjunto: 
+	$$ int(A) = \{ x \in A: \exists B(x, \delta) \subseteq A \} $$ 
+\end{definicion}
+
+\begin{definicion}
+	\textbf{(Adherencia)}
+	Se llama \textbf{adherencia} de un conjunto $A$ en un evn $E$ al conjunto: 
+	$$ \overline{A} = \{ x \in E: B(x, \varepsilon) \cap A \neq \phi , \forall \varepsilon > 0 \}$$ 	
+\end{definicion}
+
+\begin{nota}
+	De las definiciones anteriores se deduce que: 
+	\begin{itemize}
+		\item El interior de $A$ es un conjunto abierto. Más aún, es el mayor abierto contenido en $A$, esto es, la unión de todos los abiertos contenidos en $A$. 
+		\item De lo anterior se sigue que un conjunto $A$ será abierto ssi $A = int(A)$. 
+		\item La adherencia de $A$ es un conjunto cerrado. Más aún, es el menor cerrado que contiene a $A$, esto es, la intersección de todos los cerrados que contienen a $A$. 
+		\item Luego, un conjunto $A$ será cerrado ssi $A = \overline{A}$. 
+		\item Notar que, tanto el interior como la adherencia dependen de la norma con que se dote al ev $E$. Sin embargo, serán los mismos para normas equivalentes. 
+	\end{itemize}
+\end{nota}
+
+\begin{definicion}
+	\textbf{(Convergencia de sucesiones)}
+	Diremos que una sucesión $(a_n)$ en un evn $E$ converge a un elemento $a \in E$ si para toda bola $B(a, \varepsilon)$ existe un entero $n_0$ tal que $a_n \in B(a, \varepsilon)$ para todo $n \geq n_0$. Al elemento $a$ se le llama \textbf{limite} de la sucesión y escribimos: 
+	$$ \lim_n a_n = a \text{ o } a_n \rightarrow a $$ 
+\end{definicion}
+
+\begin{lema}
+	Se tiene que: 
+	$$ \lim_n a_n = a \iff \lim_k || a_n - a || = 0 $$ 
+\end{lema}
+
+\begin{proof}
+	Se tiene que: 
+	$$ \lim_n a_n = n \quad \iff \quad \forall \varepsilon > 0, \exists n_0 \in \N , || a_n - a || \leq \varepsilon, \forall n \geq n_0 $$   
+	Pero esto último equivale a que $\lim_n || a_n - a || = 0 $, de acuerdo a la definición de convergencia a $0$ de una sucesión en $\R_+$.
+\end{proof}
+
+El lema anterior será de utilidad para la prueba del siguiente resultado: 
+
+\begin{teorema}
+	Un conjunto $A$ de un evn $E$ es cerrado si y solo si toda sucesión convergente de elementos de $A$ tiene su límite en $A$. 
+\end{teorema}
+
+\begin{proof}
+	\begin{itemize}
+		\item Supongamos que $A$ es un conjunto cerrado y que $(a_n)$ es una sucesión de elementos de $A$ convergente a un elemento $a \in A$. Debemos ver que $a \in A$. En efecto, de la definición de convergencia se tiene que: 
+		$$ \forall \varepsilon > 0 , \exists n_0 \in \N, a_{n_0} \in B(a, \varepsilon) $$   
+		Luego: 
+		$$ \forall \varepsilon > 0 \cap A \neq \phi $$   
+		Lo que implica que $a \in \overline{A}$ y como $A$ es cerrado (y por lo tanto igual a su adherencia), se deduce que $a \in A$.   
+		
+		\item La demostración de derecha a izquierda queda propuesta.
+	\end{itemize}
+\end{proof}
+
